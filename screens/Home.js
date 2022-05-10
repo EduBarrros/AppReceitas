@@ -2,25 +2,52 @@ import React from 'react';
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    SafeAreaView,
+    TextInput,
+    FlatList,
+    StatusBar
 } from 'react-native';
+import { CategoryCard } from '../components';
+import { FONTS, COLORS, SIZES, icons, images, dummyData } from '../constants'
 
 const Home = ({ navigation }) => {
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
+                backgroundColor: COLORS.white
             }}
         >
-            <Text>Home</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate("Recipe")}
-            >
-                <Text>Navigate to Recipe</Text>
-            </TouchableOpacity>
-        </View>
+            <StatusBar barStyle='dark-content' backgroundColor={COLORS.white} />
+            <FlatList
+                data={dummyData.categories}
+                keyExtractor={item => `${item.id}`}
+                keyboardDismissMode='on-drag'
+                showsVerticalScrollIndicator={false}
+                ListHeaderComponentStyle={
+                    <View></View>
+                }
+                renderItem={({ item }) => {
+                    return (
+                        <CategoryCard 
+                            categoryItem={item}
+                            containerStyle={{
+                                marginHorizontal: SIZES.padding
+                            }}
+                            onPress={() => navigation.navigate('Recipe', {recipe: item})}
+                        />
+                    )
+                }}
+                ListFooterComponent={
+                    <View
+                        style={{
+                            marginBottom: 80
+                        }}
+                    />
+                }
+            />
+        </SafeAreaView>
     )
 }
 
