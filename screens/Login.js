@@ -25,20 +25,22 @@ const Login = ({ navigation }) => {
                         justifyContent: 'flex-end',
                     }}
                     resizeMode='cover'
-                />
-                <LinearGradient
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 1 }}
-                    colors={[
-                        COLORS.transparent,
-                        COLORS.black
-                    ]}
-                    style={{
-                        height: 200,
-                        justifyContent: 'flex-end',
-                        paddingHorizontal: SIZES.padding
-                    }}
-                />
+                >
+                    <LinearGradient
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 0, y: 1 }}
+                        colors={[
+                            COLORS.transparent,
+                            COLORS.black
+                        ]}
+                        style={{
+                            height: 200,
+                            justifyContent: 'flex-end',
+                            paddingHorizontal: SIZES.padding
+                        }}
+                    >
+                    </LinearGradient>
+                </ImageBackground>
             </View>
         )
     }
