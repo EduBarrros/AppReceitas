@@ -13,6 +13,7 @@ const CategoryCard = ({ containerStyle, categoryItem, onPress }) => {
             style={{
                 flexDirection: 'row',
                 alignItems: 'center',
+                paddingLeft: 0,
                 padding: 10,
                 marginTop: 10,
                 borderRadius: SIZES.radius,
