@@ -185,7 +185,10 @@ const Home = ({ navigation }) => {
 
                                 }}
                                 recipeItem={item}
-                                onPress={() => navigation.navigate('Recipe', { recipe: item })}
+                                onPress={() => {
+                                    navigation.navigate('Recipe', { recipe: item }),
+                                        console.log('Teste passagem ->', item)
+                                }}
                             />
                         )
                     }}
@@ -206,8 +209,8 @@ const Home = ({ navigation }) => {
             >
                 <Text
                     style={{
-                       flex: 1,
-                       ...FONTS.h2
+                        flex: 1,
+                        ...FONTS.h2
                     }}
                 >
                     Categories
@@ -256,7 +259,10 @@ const Home = ({ navigation }) => {
                             containerStyle={{
                                 marginHorizontal: SIZES.padding
                             }}
-                            onPress={() => navigation.navigate('Recipe', { recipe: item })}
+                            onPress={() => {
+                                navigation.navigate('Recipe', { recipe: item }),
+                                    console.log('Teste passagem ->', item)
+                            }}
                         />
                     )
                 }}
